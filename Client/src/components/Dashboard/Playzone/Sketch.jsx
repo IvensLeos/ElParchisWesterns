@@ -65,7 +65,7 @@ const Sketch = () => {
 
     FichaTablero.map(({ Id }) => {
       FichaTablero[Id].Mostrar()
-      if (FichaTablero[Id].PrevPosicion != FichaTablero[Id].ContadorDePosicion) {
+      if (FichaTablero[Id].PrevPosicion !== FichaTablero[Id].ContadorDePosicion) {
           if (FichaTablero[Id].PostX === FichaTablero[Id].X && FichaTablero[Id].PostY === FichaTablero[Id].Y) {
             if (FichaTablero[Id].ContadorDePosicion > FichaTablero[Id].PrevPosicion) {
               FichaTablero[Id].PostX = FichaTablero[Id].PosicionesX[FichaTablero[Id].PrevPosicion + 1]
@@ -79,22 +79,23 @@ const Sketch = () => {
             }
           }
         }
-        if (FichaTablero[Id].X < FichaTablero[Id].PostX && FichaTablero[Id].X != FichaTablero[Id].PostX) {
+        if (FichaTablero[Id].X < FichaTablero[Id].PostX && FichaTablero[Id].X !== FichaTablero[Id].PostX) {
           if (FichaTablero[Id].PostX - FichaTablero[Id].X >= 6) FichaTablero[Id].X += 5
           else FichaTablero[Id].X += Velocidad
         }
-        if (FichaTablero[Id].Y < FichaTablero[Id].PostY && FichaTablero[Id].Y != FichaTablero[Id].PostY) {
+        if (FichaTablero[Id].Y < FichaTablero[Id].PostY && FichaTablero[Id].Y !== FichaTablero[Id].PostY) {
           if (FichaTablero[Id].PostY - FichaTablero[Id].Y >= 6) FichaTablero[Id].Y += 5
           else FichaTablero[Id].Y += Velocidad
         }
-        if (FichaTablero[Id].X > FichaTablero[Id].PostX && FichaTablero[Id].X != FichaTablero[Id].PostX) {
+        if (FichaTablero[Id].X > FichaTablero[Id].PostX && FichaTablero[Id].X !== FichaTablero[Id].PostX) {
           if (FichaTablero[Id].X - FichaTablero[Id].PostX >= 6) FichaTablero[Id].X -= 5
           else FichaTablero[Id].X -= Velocidad
         }
-        if (FichaTablero[Id].Y > FichaTablero[Id].PostY && FichaTablero[Id].Y != FichaTablero[Id].PostY) {
+        if (FichaTablero[Id].Y > FichaTablero[Id].PostY && FichaTablero[Id].Y !== FichaTablero[Id].PostY) {
           if (FichaTablero[Id].Y - FichaTablero[Id].PostY >= 6) FichaTablero[Id].Y -= 5
           else FichaTablero[Id].Y -= Velocidad
         }
+        return 0
   })
   }
 

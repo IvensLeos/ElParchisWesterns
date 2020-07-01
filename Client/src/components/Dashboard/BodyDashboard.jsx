@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button'
 
 import PlayerCard from './Profile/PlayerCard'
 
+import { Link } from 'react-router-dom'
+
 import { BackgroundProps, TabsProps, TabProps } from './BodyDashboard.module.css'
 import './BodyDashboard.css'
 
@@ -35,7 +37,9 @@ const BodyDashboard = () => {
                   <h2>TIENDA</h2>
                 </Tab>
                 <Tab eventKey="JUGAR" title="JUGAR" className={TabProps}>
-                  <Button>IR AL TABLERO</Button>
+                  <Link to="playzone">
+                    <Button>IR AL TABLERO</Button>
+                  </Link>
                 </Tab>
                 <Tab eventKey="AYUDA" title="AYUDA" className={TabProps}>
                   <h2>AYUDA</h2>
