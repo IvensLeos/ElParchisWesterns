@@ -67,10 +67,13 @@ import { NODE_ENV, MONGODB_URI, SESSION_NAME, SESSION_SECRET, SESSION_LIFETIME }
       //Starting GrapqlServer
       const GraphQLServer = new ApolloServer({
          schema: MyGraphQLModule.schema,
-         context: session => session
+         context: session => session,
+         engine: {
+            reportSchema: true
+         }
       })
 
-      GraphQLServer.listen().then(({ url }) => {
+      GraphQLServer.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
          console.log(`GraphQL ${url}`)
       })
 
