@@ -19,6 +19,8 @@ import App from './components/App'
 const stripePromise = loadStripe('pk_test_mV6etXc4I0aogrW8MaStXgHe006EdkmpJE')
 const Client = new ApolloClient({ uri: `${window.location.protocol}//${window.location.hostname}` })
 
+console.log(Client)
+
 render(
   <ApolloProvider client={Client}>
     <ContextProvider>
