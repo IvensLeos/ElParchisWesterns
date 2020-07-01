@@ -5,7 +5,7 @@ import path from 'path'
 import mongoose from 'mongoose'
 import session from 'express-session'
 import connectStore from 'connect-mongo'
-import io from 'socket.io'
+//import io from 'socket.io'
 
 import { ApolloServer } from 'apollo-server';
 import { MyGraphQLModule } from './graphql/schema'
@@ -29,7 +29,7 @@ import { NODE_ENV, MONGODB_URI, SESSION_NAME, SESSION_SECRET, SESSION_LIFETIME }
 
       // Midlewares
       app.use(cors({
-         "origin": ["http://localhost:3000, http://*.stripe.com, http://stripe.com, http://bit.ly"],
+         "origin": ["http://localhost:3000, http://*.stripe.com, http://stripe.com"],
          "methods": ["GET, POST, DELETE"],
          "preflightContinue": false,
          "optionsSuccessStatus": 204
@@ -75,10 +75,10 @@ import { NODE_ENV, MONGODB_URI, SESSION_NAME, SESSION_SECRET, SESSION_LIFETIME }
       })
 
       //Starting Socket.IO
-      const SocketIO = io.listen(3002).origins(['http://localhost'])
-      SocketIO.on('connection', socket => {
-         console.log(socket.id)
-      })
+      // const SocketIO = io.listen(3002).origins(['http://localhost'])
+      // SocketIO.on('connection', socket => {
+      //    console.log(socket.id)
+      // })
 
    } catch (error) { console.log(error) }
 })()
