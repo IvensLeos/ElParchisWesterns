@@ -16,13 +16,13 @@ const BodyLanding = () => {
   return (
     <>
       <Container fluid>
-        <Row className="mt-5">
+        <Row className="mt-4">
           <Col>
             <Container className={ContainerLogoProps}>
               <img src={Logo} alt="Logo" className={LogoProps} />
             </Container>
           </Col>
-          <Col className="mr-3">
+          <Col className="mr-4">
             <Container className={FormProps}>
               <Row>
                 <Col xs={3}></Col>

@@ -8,6 +8,8 @@ import Tab from 'react-bootstrap/Tab'
 import Button from 'react-bootstrap/Button'
 
 import PlayerCard from './Profile/PlayerCard'
+import HelpUser from './Help/HelpUser'
+import Checkout from './Payments/Checkout'
 
 import { Link } from 'react-router-dom'
 
@@ -31,7 +33,7 @@ const BodyDashboard = () => {
                   <h2>MENSAJES</h2>
                 </Tab>
                 <Tab eventKey="CAJERO" title="CAJERO" className={TabProps}>
-                  <h2>CAJERO</h2>
+                  <Checkout />
                 </Tab>
                 <Tab eventKey="TIENDA" title="TIENDA" className={TabProps}>
                   <h2>TIENDA</h2>
@@ -42,7 +44,7 @@ const BodyDashboard = () => {
                   </Link>
                 </Tab>
                 <Tab eventKey="AYUDA" title="AYUDA" className={TabProps}>
-                  <h2>AYUDA</h2>
+                  <HelpUser />
                 </Tab>
               </Tabs>
             </Container>

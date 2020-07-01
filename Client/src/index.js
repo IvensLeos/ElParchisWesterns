@@ -8,16 +8,23 @@ import ApolloClient from 'apollo-boost'
 
 import { ContextProvider } from './context/Context'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './components/App'
 
-const Client = new ApolloClient({ uri: 'http://localhost:4000/graphql' })
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe('pk_test_mV6etXc4I0aogrW8MaStXgHe006EdkmpJE')
+const Client = new ApolloClient({ uri: `${window.location.protocol}//${window.location.hostname}` })
 
 render(
   <ApolloProvider client={Client}>
     <ContextProvider>
-      <App />
+      <Elements stripe={stripePromise}>
+        <App />
+      </Elements>
     </ContextProvider>
   </ApolloProvider>, document.getElementById('root'))
 
