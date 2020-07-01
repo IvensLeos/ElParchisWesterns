@@ -1,0 +1,40 @@
+@font-face {
+   font-family: 'TrajanPro-Bold';
+   font-style: normal;
+   src: url(../../assets/fonts/TrajanPro-Bold.otf);
+}
+
+.FormLabel {
+   text-align: center;
+   font-family: 'TrajanPro-Bold';
+   color: white;
+}
+
+.FormControl {
+   font-family: 'TrajanPro-Bold';
+   text-align: center;
+}
+
+.FormTextMuted {
+   text-align: center;
+   color: gray;
+   font-family: 'TrajanPro-Bold';
+   font-size: 11px;
+}
+
+.FormCheck {
+   font-family: 'TrajanPro-Bold';
+   color: white;
+}
+
+.LogginFailed {
+   font-family: 'TrajanPro-Bold';
+   background-color: #fff;
+   color: red;
+   font-size: 10px;
+}
+
+.FormProps {
+   font-family: 'TrajanPro-Bold';
+   text-align: center;
+}

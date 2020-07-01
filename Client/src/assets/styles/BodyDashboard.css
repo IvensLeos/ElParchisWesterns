@@ -1,0 +1,19 @@
+.Background {
+   margin-top: 5%;
+   background-image: url(../images/Rectangulo.png);
+   background-size: 100% 100%;
+   padding: 0.50% 0.5%;
+   height: 650px;
+}
+
+.tab-pane p {
+   color: darkcyan;
+}
+
+.ImgClass {
+   width: 250px;
+}
+
+a {
+   color: white;
+}

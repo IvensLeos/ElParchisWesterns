@@ -1,0 +1,61 @@
+@font-face {
+   font-family: 'TrajanPro-Bold';
+   font-style: normal;
+   src: url(../../assets/fonts/TrajanPro-Bold.otf);
+}
+
+@font-face {
+   font-family: 'Nashville';
+   font-style: normal;
+   font-weight: 400;
+   src: url(../../assets/fonts/Nashville.TTF);
+}
+
+.BackgroundProps {
+   margin-top: 7%;
+   background-image: url(../../assets/images/Rectangulo.png);
+   background-size: 100% 100%;
+   padding: 0.5% 0.5%;
+   height: 650px;
+   width: 100%;
+   text-align: center;
+   font-family: 'TrajanPro-Bold';
+   color: white;
+}
+
+.TabsProps {
+   border-bottom: 2px solid #ff0000b8;
+}
+
+.TabsProps > :link {
+   padding: 3px;
+}
+
+.TabProps {
+   padding: 2%;
+}
+
+.TabProps > p {
+   color: darkcyan;
+}
+
+.TabsProps > :link {
+   background-color: transparent;
+   color: gray; /* grey default*/
+   border-top: none;
+   border-left: none;
+   border-right: 1.5px solid #ff0000b8;
+   border-bottom: none;
+}
+
+.TabsProps > :link:focus {
+   transition: color .5s;
+   background-color: transparent;
+   color: white; /* white select*/
+}
+
+.TabsProps > :hover {
+   transition: color .5s;
+   background-color: transparent;
+   color: white; /* white hover*/
+}

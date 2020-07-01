@@ -1,0 +1,19 @@
+.LogoProps {
+   width: 100%;
+}
+
+.InicioProps {
+   width: 100%;
+   align-self: center;
+}
+
+.ContainerLogoProps {
+   margin: 3em 0;
+}
+
+.FormProps {
+   margin: 15% 0;
+   background-image: url(../../assets/images/Rectangulo.png);
+   background-size: 100% 100%;
+   padding: 3%;
+}

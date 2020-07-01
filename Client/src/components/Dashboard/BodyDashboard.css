@@ -1,0 +1,35 @@
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    transition: color .5s;
+    background-color: transparent;
+   color: white; /* grey default*/
+   border-top: none;
+   border-left: none;
+   border-right: 1.5px solid #ff0000b8;
+   border-bottom: none;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    transition: color .5s;
+    background-color: transparent;
+   color: white; /* grey default*/
+   border-top: none;
+   border-left: none;
+   border-right: 1.5px solid #ff0000b8;
+   border-bottom: none;
+}
+
+#DashboardTabs-tab-AYUDA {
+   background-image: url('../../assets/images/Ayuda.png');
+   background-position-x: 47%;
+   background-position-y: 4px;
+   background-size: 20px;
+   background-repeat: no-repeat;
+   padding-left: 30px;
+   text-align: right;
+   padding-right: 15px;
+   border: transparent;
+}
+
+a#DashboardTabs-tab-AYUDA.nav-item.nav-link {
+   color: gainsboro;
+}

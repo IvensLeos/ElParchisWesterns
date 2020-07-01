@@ -1,0 +1,39 @@
+@font-face {
+   font-family: 'TrajanPro-Bold';
+   font-style: normal;
+   src: url(../fonts/TrajanPro-Bold.otf);
+}
+
+@font-face {
+   font-family: 'Nashville';
+   font-style: normal;
+   font-weight: 400;
+   src: url(../fonts/Nashville.TTF);
+}
+
+* {
+   text-align: center;
+   font-family: 'TrajanPro-Bold';
+}
+
+.Logo-Props {
+   margin: 3em 0;
+}
+
+.Form-Props {
+   margin: 15% 0;
+   background-image: url(../images/Rectangulo.png);
+   background-size: 100% 100%;
+   padding: 3%;
+}
+
+body {
+   /* overflow: hidden; */
+   background-image: url(../images/Fondo.jpg);
+   background-size: 100% 100%;
+   background-attachment: fixed;
+}
+
+small.text-muted.form-text {
+   font-size: 11px;
+}

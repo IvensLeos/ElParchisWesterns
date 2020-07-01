@@ -1,0 +1,16 @@
+body{
+  /* overflow: hidden; */
+  background-image: url(../assets/images/Fondo.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.TitleInfo {
+  color: green;
+  text-align: center;
+}
+
+.TitleWarning {
+  color: red;
+  text-align: center;
+}
