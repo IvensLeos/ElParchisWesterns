@@ -38,7 +38,7 @@ const FormLanding = () => {
             }
           }
         `
-        request("http://localhost:4000/graphql", Query).then(data => {
+        request("/graphql", Query).then(data => {
           const { _id, Username, Email, Password, Image, Level, Bio, Ranking, Name, LastName, DNI, 
             BornDate, Gender, Nacionality, Phone, Address, CP, Locality, State, Width, Weight, Complexion,
             HairColor, Profession, Drinker, Smoker, Sports, UserSports, Zodiac, Interests, Languages } = data.GetUser || ''
@@ -61,7 +61,7 @@ const FormLanding = () => {
           }
         }
       `
-      request("http://localhost:4000/graphql", Query)
+      request("/graphql", Query)
         .then(data => {
           const { _id, Username, Email, Image, Level, Bio, Ranking, Name, LastName, DNI, 
             BornDate, Gender, Nacionality, Phone, Address, CP, Locality, State, Width, Weight, Complexion,

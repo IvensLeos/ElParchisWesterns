@@ -7,7 +7,7 @@ import session from 'express-session'
 import connectStore from 'connect-mongo'
 //import io from 'socket.io'
 
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer } from 'apollo-server-express'
 import { MyGraphQLModule } from './graphql/schema'
 //import morgan from 'morgan'
 
@@ -61,20 +61,24 @@ import { NODE_ENV, MONGODB_URI, SESSION_NAME, SESSION_SECRET, SESSION_LIFETIME }
          res.sendFile(path.join(__dirname, '../../Client/build/index.html'))
       })
 
-      // Starting Server
-      app.listen(app.get('port'), () => console.log(`Servidor http://localhost:${app.get('port')}/`))
-
-      //Starting GrapqlServer
+      // Starting GrapQLServer
       const GraphQLServer = new ApolloServer({
          schema: MyGraphQLModule.schema,
-         context: session => session,
          engine: {
             reportSchema: true
          }
       })
 
-      GraphQLServer.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-         console.log(`GraphQL ${url}`)
+      // Apply GraphQLServer Middleware
+      GraphQLServer.applyMiddleware({
+         path: '',
+         app
+      })
+
+      // Starting Server
+      app.listen(app.get('port'), () => {
+         console.log(`Servidor http://localhost:${app.get('port')}/`)
+         console.log(`Servidor http://localhost:${app.get('port')}${GraphQLServer.graphqlPath}`)
       })
 
       //Starting Socket.IO

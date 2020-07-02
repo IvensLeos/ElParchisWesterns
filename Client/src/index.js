@@ -17,10 +17,7 @@ import App from './components/App'
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe('pk_test_mV6etXc4I0aogrW8MaStXgHe006EdkmpJE')
-const Client = new ApolloClient({ uri: `${window.location.hostname}` })
-
-console.log(Client)
-console.log(`${window.location.hostname}`)
+const Client = new ApolloClient({ uri: `/graphql` })
 
 render(
   <ApolloProvider client={Client}>
