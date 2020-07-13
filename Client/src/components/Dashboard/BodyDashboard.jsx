@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button'
 import PlayerCard from './Profile/PlayerCard'
 import HelpUser from './Help/HelpUser'
 import Checkout from './Payments/Checkout'
+import Chat from './Messages/Chat'
 
 import { Link } from 'react-router-dom'
 
@@ -25,12 +26,12 @@ const BodyDashboard = () => {
           <Col xs={2}></Col>
           <Col>
             <Container className={BackgroundProps}>
-              <Tabs fill variant="tabs" defaultActiveKey="PERFIL" id="DashboardTabs" className={TabsProps}>
+              <Tabs fill variant="tabs" defaultActiveKey="MENSAJES" id="DashboardTabs" className={TabsProps}>
                 <Tab eventKey="PERFIL" title="MI PERFIL" className={TabProps}>
                   <PlayerCard />
                 </Tab>
                 <Tab eventKey="MENSAJES" title="MENSAJES" className={TabProps}>
-                  <h2>MENSAJES</h2>
+                  <Chat />
                 </Tab>
                 <Tab eventKey="CAJERO" title="CAJERO" className={TabProps}>
                   <Checkout />

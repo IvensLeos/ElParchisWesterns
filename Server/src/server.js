@@ -5,7 +5,6 @@ import path from 'path'
 import mongoose from 'mongoose'
 import session from 'express-session'
 import connectStore from 'connect-mongo'
-//import io from 'socket.io'
 
 import { ApolloServer } from 'apollo-server-express'
 import { MyGraphQLModule } from './graphql/schema'
@@ -64,9 +63,7 @@ import { NODE_ENV, MONGODB_URI, SESSION_NAME, SESSION_SECRET, SESSION_LIFETIME }
       // Starting GrapQLServer
       const GraphQLServer = new ApolloServer({
          schema: MyGraphQLModule.schema,
-         engine: {
-            reportSchema: true
-         }
+         engine: { reportSchema: true }
       })
 
       // Apply GraphQLServer Middleware
@@ -75,17 +72,29 @@ import { NODE_ENV, MONGODB_URI, SESSION_NAME, SESSION_SECRET, SESSION_LIFETIME }
          app
       })
 
-      // Starting Server
-      app.listen(app.get('port'), () => {
-         console.log(`Servidor http://localhost:${app.get('port')}/`)
-         console.log(`Servidor http://localhost:${app.get('port')}${GraphQLServer.graphqlPath}`)
-      })
+      // Starting Socket.IO
+      const Server = require('http').createServer(app)
+      const IO = require('socket.io')(Server)
 
-      //Starting Socket.IO
-      // const SocketIO = io.listen(3002).origins(['http://localhost'])
-      // SocketIO.on('connection', socket => {
-      //    console.log(socket.id)
-      // })
+      IO.on('connection', (Socket) => {
+
+         Socket.emit('ConnectionEstablished', {
+            Id: 'El Parchis Westerns',
+            Message: `Bienvenido ${Socket.id}.`
+         })
+
+         Socket.on('NewMessage', Data => {
+            Socket.emit('NewMessageReceive', Data)
+            Socket.broadcast.emit('NewMessageReceive', Data)
+         })
+      })
+      
+      // Starting Server
+      Server.listen(app.get('port'), () => {
+         console.log(`Seridor: http://localhost:${app.get('port')}/`)
+         console.log(`GraphQL: http://localhost:${app.get('port')}/graphql`)
+         console.log(`WebSocket: ws://localhost:${app.get('port')}/`)
+      })
 
    } catch (error) { console.log(error) }
 })()

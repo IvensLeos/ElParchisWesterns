@@ -1,5 +1,5 @@
-import { GraphQLModule } from '@graphql-modules/core';
-import gql from "graphql-tag";
+import { GraphQLModule } from '@graphql-modules/core'
+import gql from "graphql-tag"
 
 import UserSchema from '../models/user'
 
@@ -67,13 +67,16 @@ export const MyGraphQLModule = new GraphQLModule({
          }
       },
       Mutation: {
-         AddUser: (parent, args) => {
+         AddUser: async (parent, args, { req }) => {
             let User = new UserSchema({
                Username: args.Username,
                Email: args.Email,
                Password: args.Password
             })
-            return User.save()
+
+            let UserSaved = await User.save()
+
+            return UserSaved
          },
          UpdateUserProfileInfo: (parent, args) => {
             if (!args._id) return
