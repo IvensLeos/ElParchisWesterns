@@ -26,7 +26,7 @@ const BodyDashboard = () => {
           <Col xs={2}></Col>
           <Col>
             <Container className={BackgroundProps}>
-              <Tabs fill variant="tabs" defaultActiveKey="MENSAJES" id="DashboardTabs" className={TabsProps}>
+              <Tabs fill variant="tabs" defaultActiveKey="PERFIL" id="DashboardTabs" className={TabsProps}>
                 <Tab eventKey="PERFIL" title="MI PERFIL" className={TabProps}>
                   <PlayerCard />
                 </Tab>
