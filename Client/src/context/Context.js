@@ -4,8 +4,8 @@ const AppContext = createContext()
 
 export function ContextProvider(props) {
 
-   const [User, setUser] = useState({})
-   //const [User, setUser] = useState({ Username: 'Ivens Leos'})
+   //const [User, setUser] = useState({})
+   const [User, setUser] = useState({ Username: 'Ivens Leos'})
    
    const [Session, setSession] = useState({ SessionID: null })
 

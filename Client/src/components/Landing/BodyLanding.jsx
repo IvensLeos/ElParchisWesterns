@@ -10,19 +10,19 @@ import Inicio from '../../assets/images/Inicio.png'
 import FormLanding from './FormLanding'
 
 import { ContainerLogoProps, LogoProps, InicioProps, FormProps } from './BodyLanding.module.css'
+import './BodyLanding.module.css'
 
 const BodyLanding = () => {
-
   return (
     <>
       <Container fluid>
-        <Row className="mt-4">
+        <Row className="mt-5">
           <Col>
             <Container className={ContainerLogoProps}>
               <img src={Logo} alt="Logo" className={LogoProps} />
             </Container>
           </Col>
-          <Col className="mr-4">
+          <Col>
             <Container className={FormProps}>
               <Row>
                 <Col xs={3}></Col>
@@ -42,7 +42,6 @@ const BodyLanding = () => {
       </Container>
     </>
   )
-
 }
 
 export default BodyLanding

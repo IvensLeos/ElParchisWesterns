@@ -1,5 +1,11 @@
+.DivProps {
+   display: flex;
+   align-items: center;
+}
+
 .LogoProps {
    width: 100%;
+   text-align: center;
 }
 
 .InicioProps {
